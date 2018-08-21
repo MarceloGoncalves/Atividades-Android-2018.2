@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">VariasTelas</string>
+    <string name="but_adicionar">Adicionar</string>
+    <string name="title_activity_contatos">ActivityContatos</string>
+</resources>
