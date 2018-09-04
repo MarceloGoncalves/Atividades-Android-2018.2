@@ -5,4 +5,10 @@
     <string name="tect" />
     <string name="textDias">Que dia é hoje ?</string>
     <string name="autoComplet">Digite aqui</string>
+    <string name="textViewSpinner">Spinner</string>
+    <string name="sobre">sobre_menu</string>
+    <string name="help">help_menu</string>
+    <string name="sobre_menu">Sobre</string>
+    <string name="help_menu">help</string>
+    <string name="config">config</string>
 </resources>

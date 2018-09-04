@@ -2,12 +2,15 @@ package com.example.chie.variastelas.feature;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -24,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ToggleButton togButton = (ToggleButton) findViewById(R.id.toggleButton);
+        Menu menubar = (Menu) findViewById(R.id.sobreMenu);
 
         toggleClicked(togButton);
         imprimirClicked();
         autoComplete();
+        spinner();
+        onCreateOptionsmenu(menubar);
 
     }
 
@@ -54,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String msg = "Texto digitado: " + edtSeuText.getText();
-                Toast.makeText(getBaseContext(), msg, Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), msg, Toast.LENGTH_SHORT).show();
             }
         });
         edtSeuText.setOnClickListener(new View.OnClickListener() {
@@ -81,4 +87,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void spinner(){
+        String strmeses[] = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outrubro", "Novembro", "Dezembro"};
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+        ArrayAdapter<String> meses = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,  strmeses);
+        meses.setDropDownViewResource(android.R.layout.simple_spinner_item);
+
+        spinner.setAdapter(meses);
+    }
+
+    public boolean onCreateOptionsmenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+
 }
